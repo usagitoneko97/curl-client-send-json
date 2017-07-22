@@ -15,7 +15,7 @@ int sendJson(){
 
   /* get a curl handle */
   curl = curl_easy_init();
-
+  /*allocate memory for json_object*/
   json = json_object_new_object();
 
     /* build post data */
