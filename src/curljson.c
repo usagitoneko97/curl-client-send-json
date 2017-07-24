@@ -2,7 +2,7 @@
 #include <curl/curl.h>
 #include <json-c/json.h>
 
-const char* IPADDRESS = ("192.168.1.3:5555") ;
+const char* IPADDRESS = ("192.168.4.3:5555") ;
 int sendJson(){
   CURL *curl;
   CURLcode res;
@@ -19,9 +19,9 @@ int sendJson(){
   json = json_object_new_object();
 
     /* build post data */
-  json_object_object_add(json, "title", json_object_new_string("testies"));
-  json_object_object_add(json, "body", json_object_new_string("testies ... testies ... 1,2,3"));
-  json_object_object_add(json, "userId", json_object_new_int(133));
+  json_object_object_add(json, "period", json_object_new_int(42));
+  json_object_object_add(json, "status", json_object_new_int(152));
+  json_object_object_add(json, "maxStep", json_object_new_int(133));
     /* set curl options */
   curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
   curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
